@@ -5,11 +5,11 @@ import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './Techn
 
 const Technologies = () =>  (
   <Section id="tech">
-    <SectionDivider divider />
+    <SectionDivider $divider />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      I've worked with a range a technologies in the web development world.
-      From Back-end To Design
+      I&apos;ve worked across a range of technologies in the web development world -
+      from full-stack apps to client-ready websites and design.
     </SectionText>
     <List>
       <ListItem>
@@ -19,8 +19,8 @@ const Technologies = () =>  (
         <ListContainer>
           <ListTitle>Front-End</ListTitle>
           <ListParagraph>
-            Experiece with <br />
-            React.js
+            Next.js, React &amp; <br />
+            TypeScript
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -31,8 +31,8 @@ const Technologies = () =>  (
         <ListContainer>
           <ListTitle>Back-End</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Node and Databases
+            Python (Django/Flask), <br />
+            Laravel &amp; MySQL
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -41,15 +41,15 @@ const Technologies = () =>  (
           <DiZend size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>UI/UX</ListTitle>
+          <ListTitle>Design</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            tools like Figma
+            Web &amp; Graphic Design <br />
+            with Figma
           </ListParagraph>
         </ListContainer>
       </ListItem>
     </List>
-    <SectionDivider colorAlt />
+    <SectionDivider $colorAlt />
   </Section>
 );
 

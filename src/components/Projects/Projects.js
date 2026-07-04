@@ -5,16 +5,16 @@ import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalCompon
 import { projects } from '../../constants/constants';
 
 const Projects = () => (
-  <Section nopadding id="projects">
+  <Section $nopadding id="projects">
     <SectionDivider />
-    <SectionTitle main>Projects</SectionTitle>
+    <SectionTitle $main>Projects</SectionTitle>
     <GridContainer>
       {projects.map((p, i) => {
         return (
           <BlogCard key={i}>
-          <Img src={p.image} />
+          <Img src={p.image} alt={`${p.title} preview`} />
             <TitleContent>
-              <HeaderThree title>{p.title}</HeaderThree>
+              <HeaderThree $title>{p.title}</HeaderThree>
               <Hr />
             </TitleContent>
             <CardInfo className="card-info">{p.description}</CardInfo>
@@ -27,8 +27,8 @@ const Projects = () => (
               </TagList>
             </div>
             <UtilityList>
-              <ExternalLinks href={p.visit}>Code</ExternalLinks>
-              <ExternalLinks href={p.source}>Source</ExternalLinks>
+              <ExternalLinks href={p.visit} target="_blank" rel="noreferrer">Live Demo</ExternalLinks>
+              <ExternalLinks href={p.source} target="_blank" rel="noreferrer">Code</ExternalLinks>
             </UtilityList>
           </BlogCard>
         );

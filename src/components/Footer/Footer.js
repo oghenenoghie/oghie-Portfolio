@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai';
 
 import { SocialIcons } from '../Header/HeaderStyles';
 import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
@@ -9,29 +9,31 @@ const Footer = () => {
     <FooterWrapper>
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:314-343-3432">314-343-3432</LinkItem>
+          <LinkTitle>Email</LinkTitle>
+          <LinkItem href="mailto:ogenenoghie@gmail.com">
+            ogenenoghie@gmail.com
+          </LinkItem>
         </LinkColumn>
         <LinkColumn>
-          <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:contact@jsmastery.com">
-            contact@jsmastery.com
+          <LinkTitle>GitHub</LinkTitle>
+          <LinkItem href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer">
+            @oghenenoghie
           </LinkItem>
         </LinkColumn>
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Innovating one project at a time</Slogan>
+          <Slogan>Building web apps and teaching others to code, one project at a time.</Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons href="https://google.com">
+          <SocialIcons href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer">
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://google.com">
-            <AiFillLinkedin size="3rem" />
+          <SocialIcons href="https://twitter.com/oghie_c" target="_blank" rel="noreferrer">
+            <AiOutlineTwitter size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://google.com">
-            <AiFillInstagram size="3rem" />
+          <SocialIcons href="mailto:ogenenoghie@gmail.com">
+            <AiOutlineMail size="3rem" />
           </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>

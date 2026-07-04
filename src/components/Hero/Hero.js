@@ -6,9 +6,9 @@ import { LeftSection } from './HeroStyles';
 
 const Hero = (props) => (
   <>
-    <Section row nopadding>
+    <Section $row $nopadding>
       <LeftSection>
-        <SectionTitle main center>
+        <SectionTitle $main>
           Hi, I&apos;m Gabriel <br />
           Web Developer &amp; Designer
         </SectionTitle>

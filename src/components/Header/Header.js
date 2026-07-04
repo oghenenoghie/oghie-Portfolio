@@ -8,27 +8,19 @@ import { Container, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyle
 const Header = () =>  (
   <Container>
     <Div1>
-      <Link href="/">
-        <a style={{ display: 'flex', alignItems: 'center', color:"white" }}>
-          <DiCssdeck size="3rem" /> <span>Gabriel</span>
-        </a>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
+        <DiCssdeck size="3rem" /> <span>Gabriel</span>
       </Link>
     </Div1>
     <Div2>
       <li>
-        <Link href="#projects">
-          <NavLink>Projects</NavLink>
-        </Link>
+        <NavLink href="#projects">Projects</NavLink>
       </li>
       <li>
-        <Link href="#tech">
-          <NavLink>Technologies</NavLink>
-        </Link>
+        <NavLink href="#tech">Technologies</NavLink>
       </li>
       <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
-        </Link>
+        <NavLink href="#about">About</NavLink>
       </li>
     </Div2>
       <Div3>

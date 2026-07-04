@@ -25,7 +25,7 @@ const Home = () => {
         />
         <meta property="og:type" content="website" />
       </Head>
-      <Section grid>
+      <Section $grid>
         <Hero />
         <BgAnimation />
       </Section>

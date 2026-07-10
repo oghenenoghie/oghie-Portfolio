@@ -26,13 +26,13 @@ const Footer = () => {
           <Slogan>Building web apps and teaching others to code, one project at a time.</Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer">
+          <SocialIcons href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer" aria-label="Gabriel's GitHub profile">
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://twitter.com/oghie_c" target="_blank" rel="noreferrer">
+          <SocialIcons href="https://twitter.com/oghie_c" target="_blank" rel="noreferrer" aria-label="Gabriel's Twitter profile">
             <AiOutlineTwitter size="3rem" />
           </SocialIcons>
-          <SocialIcons href="mailto:ogenenoghie@gmail.com">
+          <SocialIcons href="mailto:ogenenoghie@gmail.com" aria-label="Email Gabriel">
             <AiOutlineMail size="3rem" />
           </SocialIcons>
         </SocialContainer>

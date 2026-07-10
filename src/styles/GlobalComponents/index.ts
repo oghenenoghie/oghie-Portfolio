@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Section = styled.section`
+export const Section = styled.section<{ $grid?: boolean; $row?: boolean; $nopadding?: boolean }>`
   display: ${(props) => props.$grid ? "grid" : "flex" };
   flex-direction: ${(props) => props.$row ? "row" : "column" };
   padding: ${(props) => props.$nopadding ? "0" : "32px 48px 0" } ;
@@ -24,7 +24,7 @@ export const Section = styled.section`
   }
 `
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled.h2<{ $main?: boolean }>`
   font-weight: 800;
   font-size: ${(props) => props.$main ? '65px' : '56px'};
   line-height: ${(props) => props.$main ? '72px' : '56px'};
@@ -76,7 +76,7 @@ export const SectionText = styled.p`
   }
 `
 
-export const SectionDivider = styled.div`
+export const SectionDivider = styled.div<{ $colorAlt?: boolean; $divider?: boolean }>`
 
   width: 64px;
   height: 6px;
@@ -148,7 +148,7 @@ export const SecondaryBtn = styled.button`
   }
 
   @media ${(props) => props.theme.breakpoints.md}{
-    margin-top: 24px; 
+    margin-top: 24px;
     margin-bottom: 64px;
     padding: 16px 24px;
     width: fit-content;
@@ -166,7 +166,13 @@ export const SecondaryBtn = styled.button`
   }
 `
 
-export const ButtonBack = styled.div`
+interface ButtonVariantProps {
+  alt?: boolean;
+  form?: boolean;
+  disabled?: boolean;
+}
+
+export const ButtonBack = styled.div<ButtonVariantProps>`
   width: ${({ alt }) => alt ? '150px' : '262px'};
   height: ${({ alt }) => alt ? '52px' : '64px'};
   border-radius: 50px;
@@ -199,7 +205,7 @@ export const ButtonBack = styled.div`
   }
 `
 
-export const ButtonFront = styled.button`
+export const ButtonFront = styled.button<{ alt?: boolean; disabled?: boolean }>`
   border: none;
   border-radius: 50px;
   color: #fff;
@@ -245,7 +251,7 @@ export const ButtonFront = styled.button`
   }
 `
 
-export const LinkContainer = styled.div`
+export const LinkContainer = styled.div<{ large?: boolean }>`
   margin-left: ${({ large }) => large ? '24px' : '16px'};
   transition: 0.3s ease;
   justify-content: center;
@@ -267,8 +273,8 @@ export const LinkContainer = styled.div`
   }
 `
 
-export const LinkIconImg = styled.div`
-  display: flex;  
+export const LinkIconImg = styled.div<{ large?: boolean; nav?: boolean }>`
+  display: flex;
   height: ${({ large }) => large ? '32px' : '24px'};
 
   @media ${(props) => props.theme.breakpoints.md} {

@@ -1,8 +1,11 @@
-export default {
-  // Temp fonts
+import { DefaultTheme } from 'styled-components';
+
+const theme: DefaultTheme = {
   fonts: {
-    title: "Space Grotesk, sans-serif",
-    main: "Space Grotesk, sans-serif"
+    // Actual font-family (from next/font) is applied via the wrapper div in _app.tsx;
+    // this is just the base fallback stack.
+    title: "system-ui, sans-serif",
+    main: "system-ui, sans-serif"
   },
   // Colors for layout
   colors: {
@@ -19,4 +22,6 @@ export default {
     lg: 'screen and (max-width: 1024px)',
     xl: 'screen and (max-width: 1280px)'
   },
-}
+};
+
+export default theme;

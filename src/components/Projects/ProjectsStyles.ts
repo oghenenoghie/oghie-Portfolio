@@ -39,7 +39,7 @@ export const TitleContent = styled.div`
 `;
 
 
-export const HeaderThree = styled.h3`
+export const HeaderThree = styled.h3<{ $title?: boolean }>`
   font-weight: 500;
   letter-spacing: 2px;
   color: #9cc9e3;
@@ -70,7 +70,7 @@ export const CardInfo = styled.p`
   width: 100%;
   padding: 0 50px;
   color: #e4e6e7;
-  font-style: 2rem;
+  font-size: 1.5rem;
   line-height: 24px;
   text-align: justify;
   @media ${(props) => props.theme.breakpoints.sm} {

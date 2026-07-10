@@ -8,13 +8,13 @@ const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
-  const carouselRef = useRef();
+  const carouselRef = useRef<HTMLUListElement>(null);
 
-  const scroll = (node, left) => {
+  const scroll = (node: HTMLUListElement, left: number) => {
     return node.scrollTo({ left, behavior: 'smooth' });
   }
 
-  const handleClick = (e, i) => {
+  const handleClick = (e: React.MouseEvent, i: number) => {
     e.preventDefault();
 
     if (carouselRef.current) {
@@ -36,7 +36,9 @@ const Timeline = () => {
   // avoids a bug where content is covered up if coming from smaller screen
   useEffect(() => {
     const handleResize = () => {
-      scroll(carouselRef.current, 0);
+      if (carouselRef.current) {
+        scroll(carouselRef.current, 0);
+      }
     }
 
     window.addEventListener('resize', handleResize);

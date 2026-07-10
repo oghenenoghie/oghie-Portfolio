@@ -4,7 +4,11 @@ import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponent
 import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 
-const Hero = (props) => (
+const scrollToProjects = () => {
+  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+};
+
+const Hero = () => (
   <>
     <Section $row $nopadding>
       <LeftSection>
@@ -15,7 +19,7 @@ const Hero = (props) => (
         <SectionText>
           I build full-stack web applications and client websites - from school and training management systems to eCommerce platforms - and teach others to code along the way.
         </SectionText>
-        <Button onClick={props.handleClick}>Learn More</Button>
+        <Button onClick={scrollToProjects}>Learn More</Button>
       </LeftSection>
     </Section>
   </>

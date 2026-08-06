@@ -1,17 +1,17 @@
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F1624"/>
-      <stop offset="100%" stop-color="#2A1620"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
     </linearGradient>
     <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#D0475F"/>
-      <stop offset="100%" stop-color="#945DD6"/>
+      <stop offset="0%" stop-color="#999999"/>
+      <stop offset="100%" stop-color="#4D4D4D"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg3)"/>
-  <circle cx="700" cy="400" r="170" fill="#D0475F" opacity="0.08"/>
-  <circle cx="70" cy="60" r="130" fill="#945DD6" opacity="0.08"/>
+  <circle cx="700" cy="400" r="170" fill="#999999" opacity="0.08"/>
+  <circle cx="70" cy="60" r="130" fill="#4D4D4D" opacity="0.08"/>
   <g transform="translate(400,175)">
     <rect x="-60" y="-40" width="120" height="70" rx="6" fill="none" stroke="url(#accent3)" stroke-width="4"/>
     <line x1="-40" y1="20" x2="40" y2="20" stroke="url(#accent3)" stroke-width="4"/>
@@ -21,5 +21,5 @@
     <rect x="15" y="-5" width="16" height="20" fill="url(#accent3)" opacity="0.7"/>
   </g>
   <text x="400" y="290" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">Training &amp; Learning Management System</text>
-  <text x="400" y="325" font-family="Arial, sans-serif" font-size="17" fill="#E39CB8" text-anchor="middle" letter-spacing="1">LARAVEL  ·  PHP  ·  MYSQL</text>
+  <text x="400" y="325" font-family="Arial, sans-serif" font-size="17" fill="#CCCCCC" text-anchor="middle" letter-spacing="1">LARAVEL  ·  PHP  ·  MYSQL</text>
 </svg>

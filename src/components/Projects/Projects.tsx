@@ -30,7 +30,9 @@ const Projects = () => (
               {p.visit && (
                 <ExternalLinks href={p.visit} target="_blank" rel="noreferrer">Live Demo</ExternalLinks>
               )}
-              <ExternalLinks href={p.source} target="_blank" rel="noreferrer">Code</ExternalLinks>
+              {p.source && (
+                <ExternalLinks href={p.source} target="_blank" rel="noreferrer">Code</ExternalLinks>
+              )}
             </UtilityList>
           </BlogCard>
         );

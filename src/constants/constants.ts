@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   image: string;
   tags: string[];
-  source: string;
+  source?: string;
   visit?: string;
   id: number;
 }
@@ -42,6 +42,14 @@ export const projects: Project[] = [
     source: 'https://github.com/oghenenoghie/DHN-consulting-website',
     visit: 'https://dhn-consulting-website.vercel.app',
     id: 3,
+  },
+  {
+    title: 'GECA Advisory',
+    description: 'A compliance-native HR & payroll platform for Nigeria and Africa, built on the 2026 Nigeria Tax Act framework - automating PAYE, pension, NHF, NHIS, NSITF, ITF and withholding-tax calculation, filing, and remittance for employers.',
+    image: '/images/projects/geca-advisory.svg',
+    tags: ['Next.js', 'TypeScript', 'Payroll SaaS'],
+    visit: 'https://www.gecaadvisory.com/',
+    id: 4,
   },
 ];
 

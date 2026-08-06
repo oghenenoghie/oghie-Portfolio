@@ -75,7 +75,7 @@ export const PrintButton = styled.button`
   height: fit-content;
 
   &:hover {
-    color: #0f1624;
+    color: #000;
     background: #fff;
     border: 1px solid #fff;
   }
@@ -136,7 +136,7 @@ export const ExperienceItem = styled.li`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: linear-gradient(270deg, #13adc7 0%, #945dd6 100%);
+    background: #fff;
   }
 `;
 

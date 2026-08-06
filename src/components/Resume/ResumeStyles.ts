@@ -179,6 +179,47 @@ export const Tag = styled.span`
   color: rgba(255, 255, 255, 0.75);
 `;
 
+export const CoverageList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+export const CoverageItem = styled.div``;
+
+export const CoverageHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+`;
+
+export const CoverageName = styled.span`
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+`;
+
+export const CoverageLevel = styled.span`
+  font-size: 14px;
+  font-weight: 700;
+  color: ${(props) => props.theme.colors.accent1};
+`;
+
+export const CoverageBarTrack = styled.div`
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+`;
+
+export const CoverageBarFill = styled.div<{ $level: number }>`
+  width: ${(props) => `${props.$level}%`};
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(270deg, #13adc7 0%, #945dd6 100%);
+`;
+
 export const ProjectsList = styled.div`
   display: flex;
   flex-direction: column;

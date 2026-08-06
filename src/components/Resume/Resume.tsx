@@ -10,6 +10,13 @@ import {
   AchievementText,
   ContactLink,
   ContactRow,
+  CoverageBarFill,
+  CoverageBarTrack,
+  CoverageHeader,
+  CoverageItem,
+  CoverageLevel,
+  CoverageList,
+  CoverageName,
   ExperienceItem,
   ExperienceList,
   ExperienceYear,
@@ -37,6 +44,15 @@ const skills = [
   { title: 'Front-End', items: ['Next.js', 'React', 'TypeScript', 'styled-components'] },
   { title: 'Back-End', items: ['Python (Django/Flask)', 'Laravel', 'MySQL', 'REST APIs'] },
   { title: 'Design', items: ['Figma', 'Web & Graphic Design', 'Responsive UI'] },
+];
+
+const skillCoverage = [
+  { name: 'Next.js / React', level: 90 },
+  { name: 'TypeScript', level: 85 },
+  { name: 'styled-components', level: 85 },
+  { name: 'Python (Django/Flask)', level: 75 },
+  { name: 'Laravel / PHP / MySQL', level: 70 },
+  { name: 'Figma & UI Design', level: 80 },
 ];
 
 const achievements = [
@@ -131,6 +147,23 @@ const Resume = () => (
           </SkillCategory>
         ))}
       </SkillsGrid>
+    </ResumeSection>
+
+    <ResumeSection>
+      <ResumeSectionTitle>Skill Coverage</ResumeSectionTitle>
+      <CoverageList>
+        {skillCoverage.map((skill) => (
+          <CoverageItem key={skill.name}>
+            <CoverageHeader>
+              <CoverageName>{skill.name}</CoverageName>
+              <CoverageLevel>{`${skill.level}%`}</CoverageLevel>
+            </CoverageHeader>
+            <CoverageBarTrack role="progressbar" aria-label={skill.name} aria-valuenow={skill.level} aria-valuemin={0} aria-valuemax={100}>
+              <CoverageBarFill $level={skill.level} />
+            </CoverageBarTrack>
+          </CoverageItem>
+        ))}
+      </CoverageList>
     </ResumeSection>
 
     <ResumeSection>

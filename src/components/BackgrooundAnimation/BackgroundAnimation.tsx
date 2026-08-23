@@ -1,7 +1,12 @@
 import React from 'react';
 
-const BackgroundAnimation = () => (
-  <div>
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
+
+const BackgroundAnimation = () => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  return (
+  <div aria-hidden="true">
     <svg
       className="BgAnimation__svg"
       viewBox="0 0 602 602"
@@ -27,6 +32,8 @@ const BackgroundAnimation = () => (
           id="path_2"
         />
       </g>
+      {!prefersReducedMotion && (
+      <>
       <ellipse
         cx="295.027"
         cy="193.118"
@@ -224,6 +231,8 @@ const BackgroundAnimation = () => (
           <mpath xlinkHref="#path_0" />
         </animateMotion>
       </path>
+      </>
+      )}
       <defs>
         <radialGradient
           id="paint0_radial"
@@ -360,6 +369,7 @@ const BackgroundAnimation = () => (
       </defs>
     </svg>
   </div>
-);
+  );
+};
 
 export default BackgroundAnimation;

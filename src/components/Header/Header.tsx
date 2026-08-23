@@ -1,43 +1,92 @@
-import Link from 'next/link';
-import React from 'react';
-import { AiFillGithub, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai';
+import React, { useState } from 'react';
+import { AiFillGithub, AiOutlineDownload, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
 
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyles';
+import { siteConfig } from '../../constants/siteConfig';
+import {
+  ActionsRow,
+  Container,
+  CvButton,
+  DesktopNav,
+  Logo,
+  MobileMenuButton,
+  MobileNav,
+  MobileNavLink,
+  MobileSocialRow,
+  NavLink,
+  SocialIcons,
+} from './HeaderStyles';
 
-const Header = () =>  (
-  <Container>
-    <Div1>
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
-        <DiCssdeck size="3rem" /> <span>Gabriel</span>
-      </Link>
-    </Div1>
-    <Div2>
-      <li>
-        <NavLink href="/#projects">Projects</NavLink>
-      </li>
-      <li>
-        <NavLink href="/#tech">Technologies</NavLink>
-      </li>
-      <li>
-        <NavLink href="/#about">About</NavLink>
-      </li>
-      <li>
-        <NavLink href="/resume">Resume</NavLink>
-      </li>
-    </Div2>
-      <Div3>
-        <SocialIcons href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer" aria-label="Gabriel's GitHub profile">
-          <AiFillGithub size="3rem" />
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'About', href: '/#about' },
+  { label: 'Resume', href: '/resume' },
+  { label: 'Contact', href: '/#contact' },
+];
+
+const Header = () => {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  return (
+    <Container>
+      <Logo href="/">
+        <DiCssdeck size="2.6rem" aria-hidden="true" /> {siteConfig.name}
+      </Logo>
+
+      <DesktopNav aria-label="Primary">
+        {navItems.map((item) => (
+          <NavLink key={item.href} href={item.href}>
+            {item.label}
+          </NavLink>
+        ))}
+      </DesktopNav>
+
+      <ActionsRow>
+        <SocialIcons href={siteConfig.githubUrl} target="_blank" rel="noreferrer" aria-label={`${siteConfig.name}'s GitHub profile`}>
+          <AiFillGithub size="2.6rem" />
         </SocialIcons>
-        <SocialIcons href="https://twitter.com/oghie_c" target="_blank" rel="noreferrer" aria-label="Gabriel's Twitter profile">
-          <AiOutlineTwitter size="3rem" />
+        <SocialIcons href={siteConfig.twitterUrl} target="_blank" rel="noreferrer" aria-label={`${siteConfig.name}'s Twitter profile`}>
+          <AiOutlineTwitter size="2.6rem" />
         </SocialIcons>
-        <SocialIcons href="mailto:ogenenoghie@gmail.com" aria-label="Email Gabriel">
-          <AiOutlineMail size="3rem"/>
+        <SocialIcons href={`mailto:${siteConfig.email}`} aria-label={`Email ${siteConfig.name}`}>
+          <AiOutlineMail size="2.6rem" />
         </SocialIcons>
-      </Div3>
+        <CvButton href={siteConfig.resumePdfPath} download>
+          <AiOutlineDownload size="1.6rem" aria-hidden="true" /> Download CV
+        </CvButton>
+        <MobileMenuButton
+          type="button"
+          aria-label={isMobileNavOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileNavOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setIsMobileNavOpen((open) => !open)}
+        >
+          {isMobileNavOpen ? '✕' : '☰'}
+        </MobileMenuButton>
+      </ActionsRow>
+
+      <MobileNav id="mobile-nav" $open={isMobileNavOpen} aria-label="Mobile">
+        {navItems.map((item) => (
+          <MobileNavLink key={item.href} href={item.href} onClick={() => setIsMobileNavOpen(false)}>
+            {item.label}
+          </MobileNavLink>
+        ))}
+        <MobileSocialRow>
+          <SocialIcons href={siteConfig.githubUrl} target="_blank" rel="noreferrer" aria-label={`${siteConfig.name}'s GitHub profile`} style={{ display: 'flex' }}>
+            <AiFillGithub size="2.4rem" />
+          </SocialIcons>
+          <SocialIcons href={siteConfig.twitterUrl} target="_blank" rel="noreferrer" aria-label={`${siteConfig.name}'s Twitter profile`} style={{ display: 'flex' }}>
+            <AiOutlineTwitter size="2.4rem" />
+          </SocialIcons>
+          <SocialIcons href={`mailto:${siteConfig.email}`} aria-label={`Email ${siteConfig.name}`} style={{ display: 'flex' }}>
+            <AiOutlineMail size="2.4rem" />
+          </SocialIcons>
+        </MobileSocialRow>
+      </MobileNav>
     </Container>
-);
+  );
+};
 
 export default Header;

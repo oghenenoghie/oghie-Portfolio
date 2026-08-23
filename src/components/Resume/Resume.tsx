@@ -1,7 +1,11 @@
 import React from 'react';
 import { AiFillGithub, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai';
 
-import { projects, TimeLineData } from '../../constants/constants';
+import { achievements } from '../../constants/achievements';
+import { experienceTimeline } from '../../constants/experience';
+import { projects } from '../../constants/projects';
+import { skillCategories } from '../../constants/skills';
+import { siteConfig } from '../../constants/siteConfig';
 import { Section, SectionDivider } from '../../styles/GlobalComponents';
 import {
   AchievementCard,
@@ -33,19 +37,6 @@ import {
   TagList,
 } from './ResumeStyles';
 
-const skills = [
-  { title: 'Front-End', items: ['Next.js', 'React', 'TypeScript', 'styled-components'] },
-  { title: 'Back-End', items: ['Python (Django/Flask)', 'Laravel', 'MySQL', 'REST APIs'] },
-  { title: 'Design', items: ['Figma', 'Web & Graphic Design', 'Responsive UI'] },
-];
-
-const achievements = [
-  { number: 20, text: 'GitHub Repositories' },
-  { number: 4, text: 'Full-Stack Projects Built' },
-  { number: 3, text: 'Client Websites Delivered' },
-  { number: 2, text: 'Years Building Software' },
-];
-
 const handlePrint = () => {
   window.print();
 };
@@ -54,17 +45,19 @@ const Resume = () => (
   <Section $nopadding>
     <ResumeHeader>
       <div>
-        <ResumeName>Gabriel (oghenenoghie)</ResumeName>
-        <ResumeRole>Web Developer, Designer &amp; Instructor</ResumeRole>
+        <ResumeName>{siteConfig.name}</ResumeName>
+        <ResumeRole>
+          {siteConfig.role} &middot; {siteConfig.roleSecondary}
+        </ResumeRole>
         <ContactRow>
-          <ContactLink href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer">
-            <AiFillGithub size="1.4rem" /> github.com/oghenenoghie
+          <ContactLink href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
+            <AiFillGithub size="1.4rem" /> github.com/{siteConfig.githubHandle}
           </ContactLink>
-          <ContactLink href="https://twitter.com/oghie_c" target="_blank" rel="noreferrer">
+          <ContactLink href={siteConfig.twitterUrl} target="_blank" rel="noreferrer">
             <AiOutlineTwitter size="1.4rem" /> @oghie_c
           </ContactLink>
-          <ContactLink href="mailto:ogenenoghie@gmail.com">
-            <AiOutlineMail size="1.4rem" /> ogenenoghie@gmail.com
+          <ContactLink href={`mailto:${siteConfig.email}`}>
+            <AiOutlineMail size="1.4rem" /> {siteConfig.email}
           </ContactLink>
         </ContactRow>
       </div>
@@ -77,16 +70,18 @@ const Resume = () => (
 
     <ResumeSection>
       <ResumeSectionTitle>Summary</ResumeSectionTitle>
-      <ResumeParagraph>
-        Web developer, designer and instructor building full-stack applications and client websites - from school and
-        training management systems to eCommerce platforms - and teaching others to code along the way.
-      </ResumeParagraph>
+      {siteConfig.aboutSummary.map((paragraph) => (
+        <ResumeParagraph key={paragraph}>{paragraph}</ResumeParagraph>
+      ))}
     </ResumeSection>
 
     <ResumeSection>
       <ResumeSectionTitle>Experience</ResumeSectionTitle>
       <ExperienceList>
-        {[...TimeLineData].reverse().map((item) => (
+        {experienceTimeline
+          .filter((item) => item.year !== 'Future')
+          .reverse()
+          .map((item) => (
           <ExperienceItem key={item.year}>
             <ExperienceYear>{item.year}</ExperienceYear>
             <ResumeParagraph>{item.text}</ResumeParagraph>
@@ -120,7 +115,7 @@ const Resume = () => (
     <ResumeSection>
       <ResumeSectionTitle>Skills</ResumeSectionTitle>
       <SkillsGrid>
-        {skills.map((category) => (
+        {skillCategories.map((category) => (
           <SkillCategory key={category.title}>
             <SkillCategoryTitle>{category.title}</SkillCategoryTitle>
             <TagList>

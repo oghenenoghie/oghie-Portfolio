@@ -1,28 +1,41 @@
 import React from 'react';
+import { AiFillGithub, AiOutlineDownload } from 'react-icons/ai';
 
+import { siteConfig } from '../../constants/siteConfig';
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection } from './HeroStyles';
+import { CtaGroup, CtaPrimary, CtaSecondary, CtaTertiary, FocusLine, LeftSection, StatusDot, StatusPill } from './HeroStyles';
 
 const scrollToProjects = () => {
   document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
 };
 
 const Hero = () => (
-  <>
-    <Section $row $nopadding>
-      <LeftSection>
-        <SectionTitle $main>
-          Hi, I&apos;m Gabriel <br />
-          Web Developer &amp; Designer
-        </SectionTitle>
-        <SectionText>
-          I build full-stack web applications and client websites - from school and training management systems to eCommerce platforms - and teach others to code along the way.
-        </SectionText>
-        <Button onClick={scrollToProjects}>Learn More</Button>
-      </LeftSection>
-    </Section>
-  </>
+  <Section $row $nopadding>
+    <LeftSection>
+      <StatusPill>
+        <StatusDot aria-hidden="true" />
+        {siteConfig.status}
+      </StatusPill>
+      <SectionTitle as="h1" $main>
+        Hi, I&apos;m {siteConfig.name.split(' ')[0]}
+        <br />
+        {siteConfig.role}
+      </SectionTitle>
+      <FocusLine>{siteConfig.focusAreas.join(' • ')}</FocusLine>
+      <SectionText>{siteConfig.heroSummary}</SectionText>
+      <CtaGroup>
+        <CtaPrimary type="button" onClick={scrollToProjects}>
+          View My Projects
+        </CtaPrimary>
+        <CtaSecondary href={siteConfig.resumePdfPath} download>
+          <AiOutlineDownload size="1.8rem" aria-hidden="true" /> Download CV
+        </CtaSecondary>
+        <CtaTertiary href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
+          <AiFillGithub size="1.8rem" aria-hidden="true" /> GitHub
+        </CtaTertiary>
+      </CtaGroup>
+    </LeftSection>
+  </Section>
 );
 
 export default Hero;

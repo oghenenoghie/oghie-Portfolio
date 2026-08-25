@@ -93,7 +93,7 @@ export const ResumeSection = styled.div`
   }
 `;
 
-export const ResumeSectionTitle = styled.h3`
+export const ResumeSectionTitle = styled.h2`
   font-weight: 700;
   font-size: 24px;
   color: #fff;
@@ -158,7 +158,7 @@ export const SkillsGrid = styled.div`
 
 export const SkillCategory = styled.div``;
 
-export const SkillCategoryTitle = styled.h4`
+export const SkillCategoryTitle = styled.h3`
   font-size: 16px;
   font-weight: 700;
   color: ${(props) => props.theme.colors.accent1};
@@ -202,7 +202,7 @@ export const ProjectHeader = styled.div`
   gap: 8px;
 `;
 
-export const ProjectTitle = styled.h4`
+export const ProjectTitle = styled.h3`
   font-size: 18px;
   font-weight: 700;
   color: #fff;

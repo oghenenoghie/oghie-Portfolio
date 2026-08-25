@@ -1,8 +1,19 @@
 import React from 'react';
 import { AiFillGithub, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai';
 
-import { SocialIcons } from '../Header/HeaderStyles';
-import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
+import { siteConfig } from '../../constants/siteConfig';
+import {
+  CompanyContainer,
+  FooterWrapper,
+  LinkColumn,
+  LinkItem,
+  LinkList,
+  LinkTitle,
+  Slogan,
+  SocialContainer,
+  SocialIcons,
+  SocialIconsContainer,
+} from './FooterStyles';
 
 const Footer = () => {
   return (
@@ -10,29 +21,27 @@ const Footer = () => {
       <LinkList>
         <LinkColumn>
           <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:ogenenoghie@gmail.com">
-            ogenenoghie@gmail.com
-          </LinkItem>
+          <LinkItem href={`mailto:${siteConfig.email}`}>{siteConfig.email}</LinkItem>
         </LinkColumn>
         <LinkColumn>
           <LinkTitle>GitHub</LinkTitle>
-          <LinkItem href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer">
-            @oghenenoghie
+          <LinkItem href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
+            @{siteConfig.githubHandle}
           </LinkItem>
         </LinkColumn>
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Building web apps and teaching others to code, one project at a time.</Slogan>
+          <Slogan>Building production-ready software, one system at a time.</Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons href="https://github.com/oghenenoghie" target="_blank" rel="noreferrer" aria-label="Gabriel's GitHub profile">
+          <SocialIcons href={siteConfig.githubUrl} target="_blank" rel="noreferrer" aria-label={`${siteConfig.name}'s GitHub profile`}>
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://twitter.com/oghie_c" target="_blank" rel="noreferrer" aria-label="Gabriel's Twitter profile">
+          <SocialIcons href={siteConfig.twitterUrl} target="_blank" rel="noreferrer" aria-label={`${siteConfig.name}'s Twitter profile`}>
             <AiOutlineTwitter size="3rem" />
           </SocialIcons>
-          <SocialIcons href="mailto:ogenenoghie@gmail.com" aria-label="Email Gabriel">
+          <SocialIcons href={`mailto:${siteConfig.email}`} aria-label={`Email ${siteConfig.name}`}>
             <AiOutlineMail size="3rem" />
           </SocialIcons>
         </SocialContainer>

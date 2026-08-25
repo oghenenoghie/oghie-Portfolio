@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import { experienceTimeline } from '../../constants/experience';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { TimeLineData } from '../../constants/constants';
 
-const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
+const TOTAL_CAROUSEL_COUNT = experienceTimeline.length;
 
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -18,7 +18,7 @@ const Timeline = () => {
     e.preventDefault();
 
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / experienceTimeline.length));
       
       scroll(carouselRef.current, scrollLeft);
     }
@@ -26,7 +26,7 @@ const Timeline = () => {
 
   const handleScroll = () => {
     if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
+      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * experienceTimeline.length);
 
       setActiveItem(index);
     }
@@ -45,14 +45,12 @@ const Timeline = () => {
   }, []);
 
   return (
-    <Section id="about">
-      <SectionTitle>About Me</SectionTitle>
-      <SectionText>
-        I&apos;m a Web Developer, Web Designer and Instructor based in Nigeria, building full-stack applications and client websites while helping others learn to build them too.
-      </SectionText>
+    <Section id="career-timeline">
+      <SectionTitle>Career Timeline</SectionTitle>
+      <SectionText>Factual, year-by-year progression - not a highlight reel.</SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
-          {TimeLineData.map((item, index) => (
+          {experienceTimeline.map((item, index) => (
             <CarouselMobileScrollNode
               key={index}
               $final={index === TOTAL_CAROUSEL_COUNT - 1}>
@@ -101,7 +99,7 @@ const Timeline = () => {
         </>
       </CarouselContainer>
       <CarouselButtons>
-        {TimeLineData.map((item, index) => {
+        {experienceTimeline.map((item, index) => {
           return (
             <CarouselButton
               key={index}

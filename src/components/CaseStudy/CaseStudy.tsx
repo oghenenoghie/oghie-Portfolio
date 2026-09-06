@@ -50,9 +50,11 @@ const CaseStudy = ({ project }: { project: Project }) => {
               <AiOutlineLink aria-hidden="true" /> Live Demo
             </PrimaryLink>
           )}
-          <SecondaryLink href={project.source} target="_blank" rel="noreferrer">
-            <AiFillGithub aria-hidden="true" /> GitHub
-          </SecondaryLink>
+          {project.source && (
+            <SecondaryLink href={project.source} target="_blank" rel="noreferrer">
+              <AiFillGithub aria-hidden="true" /> GitHub
+            </SecondaryLink>
+          )}
         </ButtonRow>
       </Header>
 
@@ -143,9 +145,13 @@ const CaseStudy = ({ project }: { project: Project }) => {
 
         <CaseSection>
           <CaseSectionTitle>GitHub</CaseSectionTitle>
-          <SecondaryLink href={project.source} target="_blank" rel="noreferrer">
-            <AiFillGithub aria-hidden="true" /> {project.source.replace(/^https?:\/\//, '')}
-          </SecondaryLink>
+          {project.source ? (
+            <SecondaryLink href={project.source} target="_blank" rel="noreferrer">
+              <AiFillGithub aria-hidden="true" /> {project.source.replace(/^https?:\/\//, '')}
+            </SecondaryLink>
+          ) : (
+            <CaseParagraph $muted>Source lives in a private repository - no public link available.</CaseParagraph>
+          )}
         </CaseSection>
       </SectionGrid>
     </Wrapper>

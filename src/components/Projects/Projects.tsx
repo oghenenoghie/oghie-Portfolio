@@ -54,9 +54,11 @@ const Projects = () => (
                   Live Demo
                 </ExternalLinks>
               )}
-              <ExternalLinks href={p.source} target="_blank" rel="noreferrer">
-                GitHub
-              </ExternalLinks>
+              {p.source && (
+                <ExternalLinks href={p.source} target="_blank" rel="noreferrer">
+                  GitHub
+                </ExternalLinks>
+              )}
             </UtilityList>
           </CardBody>
         </BlogCard>

@@ -3,8 +3,12 @@ import React from 'react';
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { Row, RowLabel, Tag, TagList } from './AIEnabledStyles';
 
-const practicing = ['AI pair-programming on production codebases', 'AI-assisted refactoring & code review'];
-const exploring = ['AI API integration', 'LLM-powered application features', 'RAG fundamentals', 'Natural-language interfaces'];
+const practicing = [
+  'AI pair-programming on production codebases',
+  'AI-assisted refactoring & code review',
+  'Retrieval-augmented generation with the Claude API (hybrid search, reranking, cited answers)',
+];
+const exploring = ['Agentic / multi-step AI workflows', 'Natural-language interfaces'];
 
 const AIEnabled = () => (
   <Section id="ai">

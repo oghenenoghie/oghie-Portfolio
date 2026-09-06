@@ -308,34 +308,4 @@ export const projects: Project[] = [
         "The project's own roadmap notes an evaluation suite as the next step, along with testing the pipeline against real APIs and databases rather than isolated unit tests.",
     },
   },
-  {
-    id: 4,
-    slug: 'dhn-consulting',
-    title: 'DHN Consulting - Client Website',
-    type: 'Client Website',
-    description:
-      'A client website built for DHN Consulting, a strategic growth and financial advisory firm - "Empowering Strategic Growth & Financial Excellence."',
-    image: '/images/projects/dhn-consulting.svg',
-    tags: ['Next.js', 'TypeScript', 'Client Project'],
-    source: 'https://github.com/oghenenoghie/DHN-consulting-website',
-    visit: 'https://dhn-consulting-website.vercel.app',
-    caseStudy: {
-      overview:
-        'A client website built for DHN Consulting, a strategic growth and financial advisory firm.',
-      problem:
-        'DHN Consulting needed a professional web presence to communicate its strategic growth and financial advisory services to prospective clients.',
-      solution:
-        'A Next.js/TypeScript marketing website deployed to production for the client.',
-      keyFeatures: ['Company and services presentation', 'Responsive, production-deployed marketing site'],
-      techStack: ['Next.js', 'TypeScript'],
-      architecture: NOT_DOCUMENTED,
-      database: NOT_DOCUMENTED,
-      api: NOT_DOCUMENTED,
-      authAndAuthorization: NOT_DOCUMENTED,
-      security: NOT_DOCUMENTED,
-      challenges: NOT_DOCUMENTED,
-      whatILearned: NOT_DOCUMENTED,
-      futureImprovements: NOT_DOCUMENTED,
-    },
-  },
 ];

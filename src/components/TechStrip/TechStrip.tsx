@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiDjango, SiGit, SiLaravel, SiMysql, SiNextdotjs, SiPostgresql, SiPython, SiReact, SiTypescript } from 'react-icons/si';
+import { SiDjango, SiDocker, SiFastapi, SiGit, SiLaravel, SiMysql, SiNextdotjs, SiPostgresql, SiPython, SiReact, SiTypescript } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 
 import { StripItem, StripList, StripSection } from './TechStripStyles';
@@ -10,12 +10,14 @@ import { StripItem, StripList, StripSection } from './TechStripStyles';
 const items = [
   { label: 'Python', Icon: SiPython },
   { label: 'Django', Icon: SiDjango },
+  { label: 'FastAPI', Icon: SiFastapi },
   { label: 'Laravel', Icon: SiLaravel },
   { label: 'React', Icon: SiReact },
   { label: 'Next.js', Icon: SiNextdotjs },
   { label: 'TypeScript', Icon: SiTypescript },
   { label: 'PostgreSQL', Icon: SiPostgresql },
   { label: 'MySQL', Icon: SiMysql },
+  { label: 'Docker', Icon: SiDocker },
   { label: 'REST APIs', Icon: TbApi },
   { label: 'Git', Icon: SiGit },
 ];

@@ -188,6 +188,85 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 5,
+    slug: 'anchorship-marine-marketplace',
+    title: 'AnchorShip NL - Marine Engine & Parts Marketplace',
+    type: 'B2B Marketplace (In Development)',
+    description:
+      'A B2B marketplace for marine diesel engines and spare parts across major brands (Wartsila, MAN, MaK, Deutz, Caterpillar), with part-number search and an admin console for managing stock listings.',
+    image: '/images/projects/anchorship.svg',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Drizzle ORM', 'PostgreSQL (Neon)', 'Framer Motion'],
+    source: 'https://github.com/oghenenoghie/anchorshipnll_frontend',
+    caseStudy: {
+      overview:
+        'A Next.js frontend for AnchorShip NL, a B2B marketplace for complete marine diesel engines and spare parts spanning major marine brands - Wartsila, MAN, MaK, Deutz and Caterpillar.',
+      problem:
+        'Marine engine and spare-parts buyers need to search a large, brand-spanning catalog by part number, SKU or OEM number and get accurate matches quickly, while sellers need a straightforward way to manage stock listings.',
+      solution:
+        'A catalog-driven marketplace with dedicated parts and engines browsing routes, part-number search across SKU, title, subtitle and OEM-number fields, and a single-admin CRUD console for creating, editing and deleting stock listings.',
+      keyFeatures: [
+        'Catalog browsing across dedicated engines and spare-parts routes',
+        'Part-number search by SKU, title, subtitle and OEM number, with fuzzy matching in progress',
+        'Admin CRUD console for stock listings',
+        'HMAC-signed session cookies for single-admin authentication',
+        'Image management via Cloudinary',
+      ],
+      techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Drizzle ORM', 'Neon PostgreSQL', 'Cloudinary', 'GitHub Actions CI'],
+      architecture:
+        'Next.js frontend -> Drizzle ORM -> Neon PostgreSQL, with Cloudinary handling product imagery and a single-admin auth layer protecting the CRUD console.',
+      database: 'PostgreSQL on Neon, accessed through Drizzle ORM.',
+      api: 'Next.js route handlers serve catalog, search and admin CRUD operations directly against the database via Drizzle.',
+      authAndAuthorization:
+        'Single-admin, credential-based login with HMAC-signed session cookies protecting the admin console.',
+      security:
+        "Session auth is HMAC-signed, but the project's own README notes that Row-Level Security and a planned Stack Auth integration are not yet complete - noted here rather than presented as finished.",
+      challenges:
+        'Building fast, typo-tolerant part-number search across SKU, title, subtitle and OEM-number fields for a catalog spanning multiple engine brands.',
+      whatILearned: NOT_DOCUMENTED,
+      futureImprovements:
+        "Enabling fuzzy search matching, adding Row-Level Security, and completing the Stack Auth integration - all noted directly in the project's own README as in-progress work.",
+    },
+  },
+  {
+    id: 6,
+    slug: 'corpus-ai-document-intelligence',
+    title: 'Corpus - AI Document Intelligence',
+    type: 'AI / Retrieval-Augmented Generation (Prototype)',
+    description:
+      'A document Q&A system that answers questions across a document library with inline, clickable citations, combining hybrid retrieval, reranking and Claude for grounded generation.',
+    image: '/images/projects/corpus-ai-rag.svg',
+    tags: ['Python', 'FastAPI', 'Next.js', 'PostgreSQL (pgvector)', 'Claude API', 'RAG'],
+    source: 'https://github.com/oghenenoghie/corpus-ai-rag',
+    caseStudy: {
+      overview:
+        'Corpus is a document intelligence system that lets users ask questions across a library of documents and get grounded answers with inline, clickable citations back to the source pages.',
+      problem:
+        'Answering questions across many documents by hand is slow, and generic LLM answers without citations are hard to trust or verify.',
+      solution:
+        'A retrieval-augmented generation pipeline that combines vector and keyword search, reranks the fused results, and prompts Claude to cite-or-abstain so every answer traces back to a specific source passage.',
+      keyFeatures: [
+        'Hybrid retrieval: vector search (HNSW cosine) fused with PostgreSQL full-text search (tsvector) via Reciprocal Rank Fusion',
+        'Cross-encoder reranking (bge-reranker-base locally, or Cohere Rerank)',
+        'Claude API streaming generation with a cite-or-abstain prompting strategy',
+        'Multi-turn conversation history',
+        'PDF viewer that jumps directly to the cited page',
+      ],
+      techStack: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI (Python)', 'PostgreSQL + pgvector (Nile)', 'OpenAI text-embedding-3-small', 'Claude API'],
+      architecture:
+        'Next.js frontend -> FastAPI backend -> hybrid retrieval (pgvector + Postgres full-text search) -> cross-encoder reranker -> Claude API for cited generation.',
+      database: 'PostgreSQL with the pgvector extension, hosted on Nile, storing both embeddings and full-text search indexes.',
+      api: 'A FastAPI backend exposing retrieval and chat endpoints consumed by the Next.js frontend.',
+      authAndAuthorization: NOT_DOCUMENTED,
+      security: NOT_DOCUMENTED,
+      challenges:
+        'Fusing two different retrieval signals (vector similarity and keyword search) into a single ranked result set, then re-ranking that fused set before it ever reaches the generation step.',
+      whatILearned:
+        "How hybrid retrieval and reranking noticeably improve citation accuracy over a vector-search-only pipeline, and how to structure a prompt so the model abstains rather than answers when it can't cite a source.",
+      futureImprovements:
+        "The project's own roadmap notes an evaluation suite as the next step, along with testing the pipeline against real APIs and databases rather than isolated unit tests.",
+    },
+  },
+  {
     id: 4,
     slug: 'dhn-consulting',
     title: 'DHN Consulting - Client Website',

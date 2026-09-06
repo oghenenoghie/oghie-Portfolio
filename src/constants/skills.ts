@@ -7,10 +7,10 @@ export interface SkillCategory {
 // See `exploringSkills` below for target-role technologies not yet demonstrated.
 export const skillCategories: SkillCategory[] = [
   { title: 'Languages', items: ['Python', 'PHP', 'JavaScript', 'TypeScript', 'SQL'] },
-  { title: 'Backend', items: ['Django / Django REST Framework', 'Laravel', 'REST APIs'] },
-  { title: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS', 'styled-components'] },
-  { title: 'Databases', items: ['PostgreSQL', 'MySQL'] },
-  { title: 'DevOps & Cloud', items: ['Git & GitHub', 'CI/CD (GitHub Actions)', 'Vercel', 'Supabase', 'Linux (CI/deployment environments)'] },
+  { title: 'Backend', items: ['Django / Django REST Framework', 'FastAPI', 'Laravel', 'REST APIs'] },
+  { title: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS', 'shadcn/ui', 'styled-components'] },
+  { title: 'Databases', items: ['PostgreSQL', 'pgvector', 'MySQL', 'Redis'] },
+  { title: 'DevOps & Cloud', items: ['Git & GitHub', 'CI/CD (GitHub Actions)', 'Docker', 'Vercel', 'Supabase', 'Neon', 'Linux (CI/deployment environments)'] },
   {
     title: 'Security',
     items: [
@@ -23,11 +23,14 @@ export const skillCategories: SkillCategory[] = [
   { title: 'Testing', items: ['Unit testing (Vitest, Django test suite)', 'CI-driven regression testing', 'API testing'] },
   {
     title: 'AI-Assisted Development',
-    items: ['AI pair-programming workflow (Claude Code) on production codebases', 'AI API integration & LLM-powered features (in progress)'],
+    items: [
+      'AI pair-programming workflow (Claude Code) on production codebases',
+      'Retrieval-augmented generation (hybrid search, reranking, cited generation) with the Claude API',
+    ],
   },
 ];
 
 // Technologies from target job descriptions that are NOT yet demonstrated in a
 // shipped project. Keep this list separate and clearly labeled - move an item
 // up into `skillCategories` once it has been actually used in a real project.
-export const exploringSkills: string[] = ['FastAPI', 'Docker', 'AWS', 'Redis', 'RAG fundamentals'];
+export const exploringSkills: string[] = ['AWS', 'Celery', 'Message queues at scale'];

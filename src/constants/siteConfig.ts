@@ -9,7 +9,7 @@ export const siteConfig = {
   aboutSummary: [
     "I'm a Full-Stack Software Developer focused on building business applications, REST APIs and scalable web systems.",
     'I work across backend development, frontend engineering, databases, authentication, APIs and deployment using technologies such as Python, Laravel, Django, React and Next.js.',
-    'My projects include a compliance-native HR & payroll platform, education platforms, an eCommerce API and a training management system.',
+    'My projects include a compliance-native HR & payroll platform, education platforms, an eCommerce API, a training management system, a B2B marine-parts marketplace and an AI document-retrieval system.',
     "I'm particularly interested in backend engineering, application security, cloud deployment, and using AI tools to build software faster without cutting corners on architecture or testing.",
   ],
   status: 'Open to Software Engineering Opportunities',

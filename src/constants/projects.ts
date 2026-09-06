@@ -1,7 +1,7 @@
 // Placeholder used for case-study fields where no verified detail exists yet.
 // Update these directly once the real information is documented - never replace
 // with invented specifics.
-export const NOT_DOCUMENTED = 'Not documented yet - see the GitHub repository for the current implementation.';
+export const NOT_DOCUMENTED = 'Not documented yet - see the project source for the current implementation.';
 
 export interface CaseStudy {
   overview: string;
@@ -28,7 +28,8 @@ export interface Project {
   description: string;
   image: string;
   tags: string[];
-  source: string;
+  /** Omit when the source lives in a private repo with no public link. */
+  source?: string;
   visit?: string;
   featured?: boolean;
   caseStudy: CaseStudy;
@@ -159,6 +160,47 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 7,
+    slug: 'geca-advisory',
+    title: 'GECA Advisory',
+    type: 'Client Website - Corporate Advisory & Training Platform',
+    description:
+      'A corporate website for a strategic growth, financial advisory and training firm, with a course catalog and training calendar, a services showcase, an online careers/application flow, and a Supabase-backed admin dashboard for managing leads and content.',
+    image: '/images/projects/geca-advisory.svg',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Sanity CMS', 'Resend'],
+    visit: 'https://www.gecaadvisory.com/',
+    caseStudy: {
+      overview:
+        'A corporate website for GECA Advisory, a strategic growth and financial advisory firm, covering its course catalog and training calendar, services (including private-equity advisory sub-services), team, insights/publications and careers, backed by an authenticated admin dashboard for managing leads and content.',
+      problem:
+        'A consulting and training firm needs a professional web presence that showcases its course calendar and services, captures leads through contact, course-enquiry and job-application forms, and lets non-technical staff keep course/service/team content current without a code deploy.',
+      solution:
+        'A Next.js site with its course, service and team content managed in Sanity CMS, public forms that write to Supabase and trigger email notifications via Resend, and a Supabase Auth-gated admin dashboard for reviewing submitted leads and applications.',
+      keyFeatures: [
+        'Course catalog with a rolling training calendar (multiple upcoming cohort dates per course)',
+        'Services showcase, including private-equity advisory sub-services',
+        'Careers page with a real file-upload job application form (resume stored in Supabase Storage)',
+        'Course-enquiry and contact forms that write to Supabase and email the team via Resend',
+        'Admin dashboard (Supabase Auth) for reviewing leads, contact submissions and job applications',
+        'Course, service and team content managed in Sanity CMS instead of hardcoded data',
+      ],
+      techStack: ['Next.js (App Router)', 'TypeScript', 'Supabase (Auth, Storage, Postgres + RLS)', 'Sanity CMS', 'Resend', 'Vercel'],
+      architecture:
+        'Next.js frontend, with course/service/team content served from Sanity CMS and forms, leads and the admin dashboard backed by Supabase (Postgres with Row-Level Security, Auth, Storage); transactional email goes out through Resend.',
+      database:
+        'PostgreSQL via Supabase with tracked SQL migrations; lead tables (contact submissions, job applications, course enquiries, subscribers) are insert-only under Row-Level Security, so the public can submit but not read them back.',
+      api: 'Next.js route handlers (e.g. the course-enquiry and careers-application endpoints) write to Supabase and send email via Resend.',
+      authAndAuthorization:
+        'Admin dashboard access is gated by Supabase Auth (email/password), replacing an earlier shared-password/hand-rolled-JWT scheme.',
+      security:
+        'Lead and application data is insert-only for the public/anon role at the database level (Row-Level Security), readable only through the service-role client the admin dashboard uses.',
+      challenges:
+        'Migrating course, service and team content off hardcoded files into Sanity CMS without changing the public-facing data shape, and keeping transactional email (Resend) and resume uploads (Supabase Storage) working through early production build failures caused by SDKs that throw synchronously when credentials are missing at build time.',
+      whatILearned: NOT_DOCUMENTED,
+      futureImprovements: NOT_DOCUMENTED,
+    },
+  },
+  {
     id: 3,
     slug: 'training-lms',
     title: 'Training & Learning Management System',
@@ -264,36 +306,6 @@ export const projects: Project[] = [
         "How hybrid retrieval and reranking noticeably improve citation accuracy over a vector-search-only pipeline, and how to structure a prompt so the model abstains rather than answers when it can't cite a source.",
       futureImprovements:
         "The project's own roadmap notes an evaluation suite as the next step, along with testing the pipeline against real APIs and databases rather than isolated unit tests.",
-    },
-  },
-  {
-    id: 4,
-    slug: 'dhn-consulting',
-    title: 'DHN Consulting - Client Website',
-    type: 'Client Website',
-    description:
-      'A client website built for DHN Consulting, a strategic growth and financial advisory firm - "Empowering Strategic Growth & Financial Excellence."',
-    image: '/images/projects/dhn-consulting.svg',
-    tags: ['Next.js', 'TypeScript', 'Client Project'],
-    source: 'https://github.com/oghenenoghie/DHN-consulting-website',
-    visit: 'https://dhn-consulting-website.vercel.app',
-    caseStudy: {
-      overview:
-        'A client website built for DHN Consulting, a strategic growth and financial advisory firm.',
-      problem:
-        'DHN Consulting needed a professional web presence to communicate its strategic growth and financial advisory services to prospective clients.',
-      solution:
-        'A Next.js/TypeScript marketing website deployed to production for the client.',
-      keyFeatures: ['Company and services presentation', 'Responsive, production-deployed marketing site'],
-      techStack: ['Next.js', 'TypeScript'],
-      architecture: NOT_DOCUMENTED,
-      database: NOT_DOCUMENTED,
-      api: NOT_DOCUMENTED,
-      authAndAuthorization: NOT_DOCUMENTED,
-      security: NOT_DOCUMENTED,
-      challenges: NOT_DOCUMENTED,
-      whatILearned: NOT_DOCUMENTED,
-      futureImprovements: NOT_DOCUMENTED,
     },
   },
 ];

@@ -1,5 +1,5 @@
-// Content of the /resume page. Mirrors the CV kept on Google Drive
-// ("Gabriel Oghenenoghie Patrick — CV", exported to /public/resume.pdf) -
+// Content of the /resume page. Mirrors the international CV kept on Google
+// Drive ("Gabriel-Patrick-CV-International.pdf", copied to /public/resume.pdf) -
 // update both together so the page and the PDF never disagree.
 
 export interface CvLink {
@@ -38,8 +38,12 @@ export interface CvCertificationGroup {
 export const cv = {
   name: 'Gabriel Oghenenoghie Patrick',
   headline: 'Full-Stack Software Developer · Backend & API Engineer',
-  location: 'Nigeria',
-  availability: 'Open to remote roles',
+  location: 'Lagos, Nigeria (WAT, UTC+1)',
+  availability: 'Open to remote roles or relocation · Visa sponsorship required for EU/UK',
+  linkedin: {
+    label: 'linkedin.com/in/patrick-oghie-6537a3209',
+    href: 'https://www.linkedin.com/in/patrick-oghie-6537a3209',
+  },
   website: { label: 'oghiegabriel.com', href: 'https://www.oghiegabriel.com' },
   profile:
     'Full-stack developer building production web applications, REST APIs and business systems with Python (Django, FastAPI), Laravel, React and Next.js. My focus is correctness where it matters most: compliance rules held as versioned data, money stored as integer minor units, and access control enforced in the database through Row-Level Security. I have delivered client systems end to end, from schema design to CI/CD and deployment.',
@@ -204,7 +208,7 @@ export const cv = {
         },
         {
           name: 'Fundamentals of Digital Marketing',
-          via: 'Google Digital Skills for Africa',
+          via: 'Google',
           date: '2023',
           verifyUrl: 'https://learndigital.withgoogle.com/link/1ar27gu2qdc',
         },
@@ -212,6 +216,12 @@ export const cv = {
     },
   ] as CvCertificationGroup[],
 
-  // The CV's Education section is still a placeholder - add entries here once it's filled in.
-  education: [] as string[],
+  education: [
+    {
+      title: 'National Diploma (ND), Business Administration',
+      meta: 'Yaba College of Technology, Lagos · 2017',
+    },
+  ] as { title: string; meta: string }[],
+
+  languages: ['English — fluent (C2)'],
 };

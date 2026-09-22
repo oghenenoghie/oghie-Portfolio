@@ -17,8 +17,7 @@ export const siteConfig = {
   email: 'ogenenoghie@gmail.com',
   githubUrl: 'https://github.com/oghenenoghie',
   twitterUrl: 'https://twitter.com/oghie_c',
-  // No LinkedIn profile is currently linked from any verified source - add one here when available.
-  linkedinUrl: undefined as string | undefined,
+  linkedinUrl: 'https://www.linkedin.com/in/patrick-oghie-6537a3209' as string | undefined,
   resumePdfPath: '/resume.pdf',
   // Falls back to the canonical domain if NEXT_PUBLIC_SITE_URL isn't set for this deploy.
   canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oghiegabriel.com',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillGithub, AiOutlineDownload, AiOutlineGlobal, AiOutlineMail } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiOutlineDownload, AiOutlineGlobal, AiOutlineMail } from 'react-icons/ai';
 
 import { cv, CvEntry } from '../../constants/cv';
 import { siteConfig } from '../../constants/siteConfig';
@@ -76,6 +76,9 @@ const Resume = () => (
           </ContactLink>
           <ContactLink href={siteConfig.githubUrl} target="_blank" rel="noreferrer">
             <AiFillGithub size="1.4rem" /> github.com/{siteConfig.githubHandle}
+          </ContactLink>
+          <ContactLink href={cv.linkedin.href} target="_blank" rel="noreferrer">
+            <AiFillLinkedin size="1.4rem" /> {cv.linkedin.label}
           </ContactLink>
         </ContactRow>
         <ContactMeta>
@@ -161,14 +164,22 @@ const Resume = () => (
       ))}
     </ResumeSection>
 
-    {cv.education.length > 0 && (
-      <ResumeSection>
-        <ResumeSectionTitle>Education</ResumeSectionTitle>
-        {cv.education.map((line) => (
-          <ResumeParagraph key={line}>{line}</ResumeParagraph>
-        ))}
-      </ResumeSection>
-    )}
+    <ResumeSection>
+      <ResumeSectionTitle>Education</ResumeSectionTitle>
+      {cv.education.map((entry) => (
+        <CertGroup key={entry.title}>
+          <EntryTitle>{entry.title}</EntryTitle>
+          <EntryMeta>{entry.meta}</EntryMeta>
+        </CertGroup>
+      ))}
+    </ResumeSection>
+
+    <ResumeSection>
+      <ResumeSectionTitle>Languages</ResumeSectionTitle>
+      {cv.languages.map((language) => (
+        <ResumeParagraph key={language}>{language}</ResumeParagraph>
+      ))}
+    </ResumeSection>
   </Section>
 );
 

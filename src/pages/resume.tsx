@@ -5,7 +5,7 @@ import { siteConfig } from '../constants/siteConfig';
 import { Layout } from '../layout/Layout';
 
 const TITLE = `Resume - ${siteConfig.name} | ${siteConfig.role}`;
-const DESCRIPTION = `Resume of ${siteConfig.name}, a full-stack software developer - experience, projects and skills across backend, APIs, and cloud deployment.`;
+const DESCRIPTION = `Resume of ${siteConfig.name}, a full-stack software developer and backend & API engineer - experience, projects, skills and certifications.`;
 
 const ResumePage = () => {
   return (

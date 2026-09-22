@@ -49,6 +49,12 @@ export const ContactRow = styled.div`
   margin-top: 16px;
 `;
 
+export const ContactMeta = styled.p`
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 10px;
+`;
+
 export const ContactLink = styled.a`
   display: flex;
   align-items: center;
@@ -158,15 +164,54 @@ export const ExperienceItem = styled.li`
   }
 `;
 
-export const ExperienceYear = styled.p`
+export const EntryTitle = styled.h3`
   font-weight: 700;
   font-size: 18px;
   color: #fff;
 `;
 
+export const EntryMeta = styled.p`
+  font-size: 15px;
+  color: ${(props) => props.theme.colors.accent1};
+  margin-top: 2px;
+`;
+
+export const EntryStack = styled.p`
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 6px;
+`;
+
+export const BulletList = styled.ul`
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  li {
+    list-style: disc;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+
+    @media ${(props) => props.theme.breakpoints.sm} {
+      font-size: 14px;
+    }
+  }
+`;
+
+export const LinkRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+`;
+
 export const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -213,19 +258,6 @@ export const ProjectItem = styled.div`
   }
 `;
 
-export const ProjectHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-`;
-
-export const ProjectTitle = styled.h3`
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-`;
-
 export const ProjectLink = styled.a`
   font-size: 14px;
   color: ${(props) => props.theme.colors.accent1};
@@ -236,37 +268,8 @@ export const ProjectLink = styled.a`
   }
 `;
 
-export const ProjectDescription = styled.p`
-  font-size: 15px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 6px 0 12px;
-`;
-
-export const AchievementsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-template-columns: repeat(2, 1fr);
+export const CertGroup = styled.div`
+  & + & {
+    margin-top: 24px;
   }
-`;
-
-export const AchievementCard = styled.div`
-  text-align: center;
-`;
-
-export const AchievementNum = styled.p`
-  font-size: 32px;
-  font-weight: 800;
-  background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
-
-export const AchievementText = styled.p`
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 4px;
 `;

@@ -62,6 +62,17 @@ export const ContactLink = styled.a`
   }
 `;
 
+export const ResumeActions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  height: fit-content;
+
+  @media print {
+    display: none;
+  }
+`;
+
 export const PrintButton = styled.button`
   color: #fff;
   background: none;
@@ -83,6 +94,13 @@ export const PrintButton = styled.button`
   @media print {
     display: none;
   }
+`;
+
+export const DownloadButton = styled(PrintButton).attrs({ as: 'a' })`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 `;
 
 export const ResumeSection = styled.div`

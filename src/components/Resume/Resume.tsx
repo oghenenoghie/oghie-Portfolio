@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillGithub, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineDownload, AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai';
 
 import { achievements } from '../../constants/achievements';
 import { experienceTimeline } from '../../constants/experience';
@@ -14,6 +14,7 @@ import {
   AchievementText,
   ContactLink,
   ContactRow,
+  DownloadButton,
   ExperienceItem,
   ExperienceList,
   ExperienceYear,
@@ -24,6 +25,7 @@ import {
   ProjectLink,
   ProjectsList,
   ProjectTitle,
+  ResumeActions,
   ResumeHeader,
   ResumeName,
   ResumeParagraph,
@@ -61,9 +63,14 @@ const Resume = () => (
           </ContactLink>
         </ContactRow>
       </div>
-      <PrintButton type="button" onClick={handlePrint}>
-        Print / Save as PDF
-      </PrintButton>
+      <ResumeActions>
+        <DownloadButton href={siteConfig.resumePdfPath} download>
+          <AiOutlineDownload size="1.6rem" aria-hidden="true" /> Download CV (PDF)
+        </DownloadButton>
+        <PrintButton type="button" onClick={handlePrint}>
+          Print this page
+        </PrintButton>
+      </ResumeActions>
     </ResumeHeader>
 
     <SectionDivider $divider />

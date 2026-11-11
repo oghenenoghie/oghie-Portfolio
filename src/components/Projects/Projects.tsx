@@ -33,7 +33,7 @@ const Projects = () => (
         <BlogCard key={p.id} $featured={p.featured}>
           <ImageWrapper>
             {p.featured && <FeaturedBadge>Featured</FeaturedBadge>}
-            <Img src={p.image} alt={`${p.title} preview`} />
+            <Img src={p.image} alt={`${p.title} screenshot`} loading="lazy" decoding="async" />
           </ImageWrapper>
           <CardBody>
             <TitleContent>

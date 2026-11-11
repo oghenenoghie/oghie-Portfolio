@@ -43,7 +43,7 @@ export const projects: Project[] = [
     type: 'Business Platform / Compliance Engine',
     description:
       'Compliance-native payroll and HR platform for Nigeria, with a versioned statutory rules engine, database-level role security, and integer-precision payroll math.',
-    image: '/images/projects/hr-payroll.svg',
+    image: '/images/projects/hr-payroll.webp',
     tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Row-Level Security', 'REST API', 'Authentication'],
     source: 'https://github.com/oghenenoghie/hr-payroll',
     visit: 'https://hr-payroll-wagebook.vercel.app',
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     type: 'Platform Architecture / Monorepo',
     description:
       'A multi-tenant monorepo where one shared core - tenancy, RBAC and Row-Level Security, a double-entry ledger and a statutory rules engine - backs four products: payroll, a cooperative society, hotel management and school timetabling.',
-    image: '/images/projects/business-systems.svg',
+    image: '/images/projects/business-systems.webp',
     tags: ['TypeScript', 'PostgreSQL', 'Row-Level Security', 'Next.js', 'Vitest', 'pnpm monorepo'],
     source: 'https://github.com/oghenenoghie/business-repo',
     caseStudy: {
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     type: 'Full-Stack Application',
     description:
       'A full-featured web application for streamlining school operations - student management, exam processing, result generation and fee tracking.',
-    image: '/images/projects/school-ms.svg',
+    image: '/images/projects/school-ms.webp',
     tags: ['Next.js', 'TypeScript', 'Full-Stack'],
     source: 'https://github.com/oghenenoghie/school-ms',
     caseStudy: {
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     type: 'REST API / Backend',
     description:
       'A Django REST Framework backend powering a headless eCommerce storefront - product catalog, cart/checkout, orders and payments behind a JWT-secured API.',
-    image: '/images/projects/ecommerce.svg',
+    image: '/images/projects/ecommerce.webp',
     tags: ['Python', 'Django REST Framework', 'PostgreSQL', 'JWT', 'REST API'],
     source: 'https://github.com/oghenenoghie/oghie-store',
     visit: 'https://oghie-store.vercel.app',
@@ -208,7 +208,7 @@ export const projects: Project[] = [
     type: 'Client Website - Corporate Advisory & Training Platform',
     description:
       'A corporate website for a strategic growth, financial advisory and training firm, with a course catalog and training calendar, a services showcase, an online careers/application flow, and a Supabase-backed admin dashboard for managing leads and content.',
-    image: '/images/projects/geca-advisory.svg',
+    image: '/images/projects/geca-advisory.webp',
     tags: ['Next.js', 'TypeScript', 'Supabase', 'Sanity CMS', 'Resend'],
     visit: 'https://www.gecaadvisory.com/',
     caseStudy: {
@@ -249,7 +249,7 @@ export const projects: Project[] = [
     type: 'Client Website - B2B Trading Platform',
     description:
       'A live B2B trading platform for marine diesel engines and spare parts, built around interactive exploded-diagram part discovery, typo-tolerant OEM part-number search and an admin console for stock, drawings and enquiries.',
-    image: '/images/projects/shipcove-drydock.svg',
+    image: '/images/projects/shipcove-drydock.webp',
     tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Row-Level Security', 'Cloudinary', 'Resend'],
     source: 'https://github.com/oghenenoghie/marine-engine-sale-',
     visit: 'https://www.shipcovetrading.com',
@@ -291,7 +291,7 @@ export const projects: Project[] = [
     type: 'Client Website - Art Marketplace',
     description:
       'A live, cinematic gallery and marketplace for original paintings, sculpture and bronze: collectors browse and enquire, artists submit work to sell, and visitors explore art through thirteen movements, all run from an admin console.',
-    image: '/images/projects/b-edge-artworks.svg',
+    image: '/images/projects/b-edge-artworks.webp',
     tags: ['Next.js', 'TypeScript', 'Neon PostgreSQL', 'Tailwind CSS', 'GSAP', 'Motion'],
     source: 'https://github.com/oghenenoghie/pronlart2026',
     visit: 'https://www.b-edgeartworks.com',
@@ -334,7 +334,7 @@ export const projects: Project[] = [
     type: 'Full-Stack Application',
     description:
       'A centralized platform for managing courses, trainers, trainees, schedules, attendance, assessments, and training records.',
-    image: '/images/projects/training-lms.svg',
+    image: '/images/projects/training-lms.webp',
     tags: ['Laravel', 'PHP', 'MySQL'],
     source: 'https://github.com/oghenenoghie/Training-Learning-Management-System-',
     caseStudy: {
@@ -442,7 +442,7 @@ export const projects: Project[] = [
     type: 'Full-Stack / AI Application (In Development)',
     description:
       'A computer-based testing platform for schools: teachers draft exam questions with Claude from school-approved learning materials only, then review, approve, publish and grade them, under a strict per-school tenant model.',
-    image: '/images/projects/intelligent-cbt.svg',
+    image: '/images/projects/intelligent-cbt.webp',
     tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'PostgreSQL', 'Claude API'],
     source: 'https://github.com/oghenenoghie/cbt',
     caseStudy: {
@@ -484,7 +484,7 @@ export const projects: Project[] = [
     type: 'REST API / Backend',
     description:
       'A multi-tenant school management backend, with Django as the system of record and FastAPI as an async edge service, covering academics, attendance, timetabling, exams, fees and reporting behind tenant-scoped RBAC and Postgres Row-Level Security.',
-    image: '/images/projects/folad-sms.svg',
+    image: '/images/projects/folad-sms.webp',
     tags: ['Python', 'Django REST Framework', 'FastAPI', 'PostgreSQL', 'Row-Level Security', 'Redis', 'Celery'],
     source: 'https://github.com/oghenenoghie/folad_lms_python',
     caseStudy: {
@@ -525,7 +525,7 @@ export const projects: Project[] = [
     type: 'B2B Marketplace / AI (In Development)',
     description:
       'A multi-vendor B2B marketplace for wholesale and industrial procurement, with hybrid vector and full-text product search, a Claude tool-calling procurement assistant, and a cart -> RFQ -> quote -> order -> invoice flow split per vendor.',
-    image: '/images/projects/aswaq-b2b.svg',
+    image: '/images/projects/aswaq-b2b.webp',
     tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL (pgvector)', 'Claude API', 'Row-Level Security'],
     source: 'https://github.com/oghenenoghie/b2b-ecommcer',
     caseStudy: {

@@ -1,0 +1,30 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+    <linearGradient id="accent9" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#CCCCCC"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg9)"/>
+  <circle cx="90" cy="70" r="160" fill="#FFFFFF" opacity="0.08"/>
+  <circle cx="720" cy="390" r="150" fill="#CCCCCC" opacity="0.08"/>
+  <g transform="translate(400,170)" fill="none" stroke="url(#accent9)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-24" y="-62" width="48" height="30" rx="4"/>
+    <line x1="0" y1="-32" x2="0" y2="-14"/>
+    <line x1="-66" y1="-14" x2="66" y2="-14"/>
+    <line x1="-66" y1="-14" x2="-66" y2="2"/>
+    <line x1="-22" y1="-14" x2="-22" y2="2"/>
+    <line x1="22" y1="-14" x2="22" y2="2"/>
+    <line x1="66" y1="-14" x2="66" y2="2"/>
+    <rect x="-80" y="2" width="28" height="24" rx="3"/>
+    <rect x="-36" y="2" width="28" height="24" rx="3"/>
+    <rect x="8" y="2" width="28" height="24" rx="3"/>
+    <rect x="52" y="2" width="28" height="24" rx="3"/>
+  </g>
+  <text x="400" y="290" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">Business Systems Platform</text>
+  <text x="400" y="325" font-family="Arial, sans-serif" font-size="17" fill="#CCCCCC" text-anchor="middle" letter-spacing="1">LEDGER  ·  RULES ENGINE  ·  POSTGRES RLS</text>
+</svg>
